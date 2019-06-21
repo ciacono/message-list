@@ -4,5 +4,5 @@ Message List site - for learning React/Redux/Node/Express. Assignment for CPSC 4
 
 ## Credits:
 
-[1](https://github.com/iamshaunjp/rest-api-playlist)
+[The Net Ninja REST API tutorial](https://youtu.be/BRdcRFvuqsE)
 
