@@ -1,12 +1,10 @@
 import React from 'react'
 import Message from './Message'
 import {getMessages} from '../actions'
-import {applyMiddleware as dispatch} from "redux";
 import ClearButton from "./ClearButton";
 import { connect } from "react-redux";
 
 class MessageList extends React.Component {
-    //TODO: initial messages not loading! but they work when added via addMessage?
     async componentDidMount() {
         try {
             let response = await fetch('http://localhost:4000/api/messages', {

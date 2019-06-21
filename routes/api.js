@@ -3,7 +3,7 @@ const router = express.Router();
 const uuidv4 = require('uuid/v4');
 
 //initial messages:
-const coolFunState = [{id: uuidv4(), text: 'Messages are great!'},
+var coolFunState = [{id: uuidv4(), text: 'Messages are great!'},
         {id: uuidv4(), text: 'What is your favorite dog breed?'},
         {id: uuidv4(), text: 'Water is wet.'}];
 
@@ -15,23 +15,18 @@ router.get('/messages', function(req, res){
 
 //adding a new message -> input task attached to req.body
 router.post('/messages', function(req, res){
+    console.log(JSON.stringify(req.body));
     coolFunState.push(req.body); //adding task to messages state array
+    res.json(req.body);
     console.log('POST request', req.body);
 });
 
 //deleting list of messages
-//TODO: handling delete here, not in reducer
-//TODO DELETE NOT WORKING!!!
 router.delete('/messages', function(req, res){
-    coolFunState.length = 0;
-    res.json(coolFunState);
+    coolFunState = [];
     console.log('DELETE request');
+    res.json(coolFunState);
 });
-
-// //update message?
-// router.put('/messages/:id', function(req, res){
-//     res.send({type:'PUT'}) //sending back response type
-// });
 
 module.exports = router;
 

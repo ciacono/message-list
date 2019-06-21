@@ -9,7 +9,6 @@ const messages = (state = [], action) => {
                 action.payload
             ];
         case 'DELETE_MESSAGES':
-            //TODO: is it getting the state from delete request? Is this redundant since technically another get request is called? Who knows.
             return action.payload;
         default:
             return state;

@@ -5,24 +5,34 @@ import uuid from 'uuid';
 
 const InputMessage = ({ dispatch }) => {
     let input;
-    let newId = uuid.v4();
+
+    const handleAdd = async (e) => {
+        e.preventDefault();
+        if (!input.value.trim()) {
+            return
+        }
+
+        try {
+            let response = await fetch('http://localhost:4000/api/messages', {
+                method: 'POST',
+                headers:{
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({id: uuid.v4(), text: input.value})
+            });
+
+            let data = await response.json();
+            dispatch(addMessage(data));
+            input.value = '';
+
+        } catch (e) {
+            console.log(e);
+        }
+    };
 
     return (
         <div style={style}>
-            <form onSubmit={e => {
-                e.preventDefault();
-                if (!input.value.trim()) {
-                    return
-                }
-                //TODO post request is being called, but empty message being added to server...
-                //BUT it is showing up in react app?
-                fetch('http://localhost:4000/api/messages', {
-                    method: 'POST',
-                    body: JSON.stringify({id: newId, text: input.value})
-                }).then(res => res.json())
-                    .then(dispatch(addMessage({id: newId, text: input.value})));
-                input.value = ''
-            }}>
+            <form onSubmit={handleAdd}>
                 <input  style={inStyle} ref={node => input = node} />
                 <button type="submit">
                     Submit
@@ -42,4 +52,5 @@ const style = {
     width: '100%'
 };
 
-export default connect()(InputMessage)
+export default connect(
+    )(InputMessage)
