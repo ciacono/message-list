@@ -1,12 +1,22 @@
-const messages = (state = [], action) => {
+const initialState = {
+    messages: []
+}
+
+const messages = (state = initialState, action) => {
     switch (action.type) {
         case 'GET_MESSAGES':
-            return action.payload;
-        case 'ADD_MESSAGE':
-            return [
+            return {
                 ...state,
-                action.payload
-            ];
+                messages: action.payload
+            };
+        case 'ADD_MESSAGE':
+            return {
+                ...state,
+                messages: [
+                    ...state.messages,
+                    action.payload
+                ]
+            };
         default:
             return state;
     }
