@@ -10,13 +10,13 @@ const coolFunState = [{id: uuidv4(), text: 'Messages are great!'},
 //getting the list of messages
 router.get('/messages', function(req, res){
     res.json(coolFunState);
-    console.log('GET request', req.body, coolFunState);
+    console.log('GET request', req.body);
 });
 
 //adding a new message -> input task attached to req.body
 router.post('/messages', function(req, res){
     coolFunState.push(req.body); //adding task to messages state array
-    console.log('POST request', req.body, coolFunState);
+    console.log('POST request', req.body);
 });
 
 //deleting list of messages
@@ -25,7 +25,7 @@ router.post('/messages', function(req, res){
 router.delete('/messages', function(req, res){
     coolFunState.length = 0;
     res.json(coolFunState);
-    console.log('DELETE request', coolFunState);
+    console.log('DELETE request');
 });
 
 // //update message?

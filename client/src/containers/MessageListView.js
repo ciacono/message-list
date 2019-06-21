@@ -6,5 +6,5 @@ const mapStateToProps = state => ({
 });
 
 export default connect(
-    mapStateToProps,
+    //mapStateToProps,
 )(MessageList)
