@@ -2,10 +2,10 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const routes = require('./routes/api');
 const app = express();
-const cors = require('cors');
+//const cors = require('cors');
 
 app.use(bodyParser.json());
-app.use(cors());
+//app.use(cors());
 //using route at localhost:4000/api/messages
 app.use('/api', routes);
 app.use(express.static(__dirname));

@@ -10,21 +10,23 @@ const coolFunState = [{id: uuidv4(), text: 'Messages are great!'},
 //getting the list of messages
 router.get('/messages', function(req, res){
     res.json(coolFunState);
-    console.log('GET request', req.body);
+    console.log('GET request', req.body, coolFunState);
 });
 
 //adding a new message -> input task attached to req.body
 router.post('/messages', function(req, res){
     coolFunState.push(req.body); //adding task to messages state array
-    console.log('POST request', req.body);
+    console.log('POST request', req.body, coolFunState);
 });
 
-// //deleting list of messages
-// router.delete('/messages', function(req, res){
-//     messages.length = 0;
-//     res.json(messages);
-//     console.log('DELETE request', req.body);
-// });
+//deleting list of messages
+//TODO: handling delete here, not in reducer
+//TODO DELETE NOT WORKING!!!
+router.delete('/messages', function(req, res){
+    coolFunState.length = 0;
+    res.json(coolFunState);
+    console.log('DELETE request', coolFunState);
+});
 
 // //update message?
 // router.put('/messages/:id', function(req, res){

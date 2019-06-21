@@ -1,33 +1,32 @@
 import React from 'react'
 import Message from './Message'
-import { getMessages } from '../actions'
+import {getMessages} from '../actions'
 import {applyMiddleware as dispatch} from "redux";
-import { connect } from 'react-redux'
+import ClearButton from "./ClearButton";
 
 class MessageList extends React.Component {
-    //TODO: initial messages not loading! react app working tho
+    //TODO: initial messages not loading! but they work when added via addMessage?
     componentDidMount() {
         fetch('http://localhost:4000/api/messages')
             .then(res => res.json())
-            .then(messages => getMessages(messages));
+            .then(dispatch(getMessages(this.props.messages)));
     }
 
     render() {
         return (
-            <ul>
-                {this.props.messages && this.props.messages.map(message =>
-                    <Message
-                        key={message.id}
-                        {...message}
-                    />
-                )}
-            </ul>
+            <div>
+                <ul>
+                    {this.props.messages.map(message =>
+                        <Message
+                            key={message.id}
+                            {...message}
+                        />
+                    )}
+                </ul>
+                <ClearButton />
+            </div>
         )
     }
 }
 
-const mapStateToProps = state => ({
-    messages: state.messages.messages
-});
-
-export default connect(mapStateToProps, { getMessages })(MessageList);
+export default MessageList
