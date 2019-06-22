@@ -41,7 +41,7 @@ ul {
   margin: 0;
   padding: 0.1%;
   box-sizing: border-box;
-  height: 445px;
+  height: 400px;
   overflow-y: scroll;
   text-align: justify;
 }
@@ -69,6 +69,10 @@ button {
 button:hover {
   background-color: #EDF2F2;
   color:#535B60;
+}
+
+.clearButton {
+  width: 100%;
 }
 
 form {

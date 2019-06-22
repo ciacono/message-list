@@ -1,6 +1,6 @@
-import React from 'react'
-import InputMessage from '../containers/InputMessage'
-import MessageListView from '../containers/MessageListView'
+import React from 'react';
+import InputMessage from '../containers/InputMessage';
+import MessageListView from '../containers/MessageListView';
 
 const App = () => (
     <div>
