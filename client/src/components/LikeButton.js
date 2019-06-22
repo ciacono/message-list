@@ -1,4 +1,7 @@
 import React from 'react';
+import { faThumbsUp, faThumbsDown } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
 
 class LikeButton extends React.Component {
     constructor(props) {
@@ -17,7 +20,8 @@ class LikeButton extends React.Component {
         return (
             <div>
                 <button onClick={this.handleClick}>
-                    {this.state.toggleOn ? 'Like' : 'Unlike'}
+                    <FontAwesomeIcon icon={this.state.toggleOn ? faThumbsUp : faThumbsDown}/>
+                    {/*{this.state.toggleOn ? 'Like' : 'Unlike'}*/}
                 </button>
             </div>
         )
