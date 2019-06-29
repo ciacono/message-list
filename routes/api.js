@@ -21,7 +21,7 @@ router.post('/messages', function(req, res){
 
 //deleting list of messages
 router.delete('/messages', function(req, res){
-    Message.deleteMany({}).then(function(messages){
+    Message.deleteMany().then(function(messages){
         res.send(messages);
     }).catch(error => {console.log('caught', error.message)});
     console.log('DELETE request');

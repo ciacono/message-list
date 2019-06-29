@@ -23,7 +23,7 @@ class MessageList extends React.Component {
         return (
             <div>
                 <ul>
-                    {this.props.messages.map(message =>
+                    {this.props.messages && this.props.messages.map(message =>
                         <Message
                             key={message.id}
                             {...message}
