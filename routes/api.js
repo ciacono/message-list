@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const uuidv4 = require('uuid/v4');
+const Message = require('../models/message');
 
 //initial messages:
 var coolFunState = [{id: uuidv4(), text: 'Messages are great!'},
@@ -15,9 +16,13 @@ router.get('/messages', function(req, res){
 
 //adding a new message -> input task attached to req.body
 router.post('/messages', function(req, res){
-    console.log(JSON.stringify(req.body));
-    coolFunState.push(req.body); //adding task to messages state array
-    res.json(req.body);
+    Message.create(req.body).then(function(message){
+        res.json(message);
+    }).catch(error => {console.log('caught', error.message);
+    });
+    //TODO handle IDs
+    //console.log(JSON.stringify(req.body));
+    //coolFunState.push(req.body); //adding task to messages state array
     console.log('POST request', req.body);
 });
 
