@@ -8,7 +8,6 @@ export const getMessages = messageState => ({
     payload: messageState
 });
 
-export const deleteMessages = messageState => ({
-    type: 'DELETE_MESSAGES',
-    payload: messageState
+export const deleteMessages = () => ({
+    type: 'DELETE_MESSAGES'
 });

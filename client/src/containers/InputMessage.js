@@ -1,7 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { addMessage } from '../actions'
-import uuid from 'uuid';
 
 const InputMessage = ({ dispatch }) => {
     let input;
@@ -18,7 +17,7 @@ const InputMessage = ({ dispatch }) => {
                 headers:{
                     'Content-Type': 'application/json'
                 },
-                body: JSON.stringify({id: uuid.v4(), text: input.value})
+                body: JSON.stringify({text: input.value})
             });
 
             let data = await response.json();

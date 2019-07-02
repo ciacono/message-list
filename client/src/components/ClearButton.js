@@ -10,9 +10,8 @@ class ClearButton extends React.Component {
 
     handleClick() {
         fetch('http://localhost:4000/api/messages', {
-            method: 'DELETE'
-        }).then(res => res.json())
-            .then(res => this.props.deleteMessages(res))
+            method: 'DELETE',
+        }).then(res => this.props.deleteMessages(res))
     }
 
     render() {
