@@ -1,6 +1,6 @@
-# CPSC436-Assignment-3
+# Assignment 4
 
-Message List site - for learning React/Redux/Node/Express. Assignment for CPSC 436I at UBC.
+Message List site - for learning React/Redux/Node/Express, now with data persistence using MongoDB! Assignment for CPSC 436I at UBC.
 
 ## Credits:
 
