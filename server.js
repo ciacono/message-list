@@ -19,7 +19,7 @@ mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/messagesdb');
 mongoose.Promise = global.Promise;
 
 app.get("*", (req, res) => {
-    res.sendFile(path.join(__dirname, "client", "build", "index.html"));
+    res.sendFile(path.join(__dirname, "client", "build", "server.js.html"));
 });
 
 app.listen(port, function(){
