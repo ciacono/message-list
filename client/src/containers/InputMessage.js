@@ -33,7 +33,7 @@ const InputMessage = ({ dispatch }) => {
         <div style={style}>
             <form onSubmit={handleAdd}>
                 <input  style={inStyle} ref={node => input = node} />
-                <button type="submit">
+                    <button type="submit">
                     Submit
                 </button>
             </form>
