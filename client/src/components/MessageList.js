@@ -7,7 +7,7 @@ import { connect } from "react-redux";
 class MessageList extends React.Component {
     async componentDidMount() {
         try {
-            let response = await fetch('http://localhost:4000/api/messages', {
+            let response = await fetch('https://aqueous-lowlands-86563.herokuapp.com/api/messages', {
                 method: 'GET'
             });
 

@@ -12,7 +12,7 @@ const InputMessage = ({ dispatch }) => {
         }
 
         try {
-            let response = await fetch('http://localhost:4000/api/messages', {
+            let response = await fetch('https://aqueous-lowlands-86563.herokuapp.com/api/messages', {
                 method: 'POST',
                 headers:{
                     'Content-Type': 'application/json'

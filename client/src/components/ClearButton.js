@@ -9,7 +9,7 @@ class ClearButton extends React.Component {
     }
 
     handleClick() {
-        fetch('http://localhost:4000/api/messages', {
+        fetch('https://aqueous-lowlands-86563.herokuapp.com/api/messages', {
             method: 'DELETE',
         }).then(res => this.props.deleteMessages(res))
     }
