@@ -1,6 +1,10 @@
-# Assignment 5
+# Assignment 5 - Message List Site
 
 Message List site - for learning React/Redux/Node/Express/Mongo, deployed on Heroku. Assignment for CPSC 436I at UBC.
+
+## The App:
+
+![screenshot](message-list-screenshot.PNG)
 
 ## Credits:
 
